@@ -1,8 +1,8 @@
 <template>
   <div>
     <div class="title">热销推荐</div>
-    <ul>
-      <li class="item border-bottom" v-for="item in recommendList" :key="item.id">
+    <ul v-if="showRecommend">
+      <li class="item border-bottom" v-for="item in list" :key="item.id">
         <div class="item-img-wrapper">
           <img :src="item.imgUrl" alt class="item-img" />
         </div>
@@ -19,46 +19,12 @@
 <script>
 export default {
   name: 'HomeRecommend',
-  data () {
-    return {
-      recommendList: [
-        {
-          id: '0001',
-          imgUrl: 'http://img1.qunarzz.com/sight/p0/1607/7c/7cda8b6782dabd80b4.img.jpg_200x200_2039e660.jpg',
-          title: '上海迪士尼乐园',
-          desc: '全球最大的迪士尼城堡'
-        },
-        {
-          id: '0002',
-          imgUrl: 'http://img1.qunarzz.com/sight/p0/1607/7c/7cda8b6782dabd80b4.img.jpg_200x200_2039e660.jpg',
-          title: '上海迪士尼乐园',
-          desc: '全球最大的迪士尼城堡'
-        },
-        {
-          id: '0003',
-          imgUrl: 'http://img1.qunarzz.com/sight/p0/1607/7c/7cda8b6782dabd80b4.img.jpg_200x200_2039e660.jpg',
-          title: '上海迪士尼乐园',
-          desc: '全球最大的迪士尼城堡'
-        },
-        {
-          id: '0004',
-          imgUrl: 'http://img1.qunarzz.com/sight/p0/1607/7c/7cda8b6782dabd80b4.img.jpg_200x200_2039e660.jpg',
-          title: '上海迪士尼乐园',
-          desc: '全球最大的迪士尼城堡'
-        },
-        {
-          id: '0005',
-          imgUrl: 'http://img1.qunarzz.com/sight/p0/1607/7c/7cda8b6782dabd80b4.img.jpg_200x200_2039e660.jpg',
-          title: '上海迪士尼乐园',
-          desc: '全球最大的迪士尼城堡'
-        },
-        {
-          id: '0006',
-          imgUrl: 'http://img1.qunarzz.com/sight/p0/1607/7c/7cda8b6782dabd80b4.img.jpg_200x200_2039e660.jpg',
-          title: '上海迪士尼乐园',
-          desc: '全球最大的迪士尼城堡'
-        }
-      ]
+  props: {
+    list: Array
+  },
+  computed: {
+    showRecommend () {
+      return this.list.length
     }
   }
 }
