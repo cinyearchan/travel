@@ -8,7 +8,7 @@
     </div>
     <router-link to="/city">
       <div class="header-right">
-        {{ city }}
+        {{ this.$store.state.city | limitedCity }}
         <span class="iconfont arrow-icon">&#xe65c;</span>
       </div>
     </router-link>
@@ -18,8 +18,12 @@
 <script>
 export default {
   name: 'HomeHeader',
-  props: {
-    city: String
+  filters: {
+    limitedCity (value) {
+      if (!value) return '暂无'
+      value = value.toString()
+      return value.length > 3 ? value.slice(0, 3) : value
+    }
   }
 }
 </script>
