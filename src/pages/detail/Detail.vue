@@ -1,6 +1,6 @@
 <template>
   <div class="banner">
-    <detail-banner :sightName="sightName" :img="bannerImg" :imgs="gallaryImgs"></detail-banner>
+    <detail-banner :sightName="sightName" :bannerImg="bannerImg" :gallaryImgs="gallaryImgs"></detail-banner>
     <detail-header></detail-header>
     <detail-list :list="categoryList"></detail-list>
     <div class="content"></div>

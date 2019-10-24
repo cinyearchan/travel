@@ -1,16 +1,16 @@
 <template>
   <div>
     <div class="banner" @click="handleBannerClick">
-      <img :src="img" alt class="banner-img" />
+      <img :src="bannerImg" alt class="banner-img" />
       <div class="banner-info">
         <div class="banner-title">{{ sightName }}</div>
         <div class="banner-number">
           <span class="iconfont banner-icon">&#xe719;</span>
-          {{ imgs.length }}
+          {{ gallaryImgs.length }}
         </div>
       </div>
     </div>
-    <common-gallary :imgs="imgs" v-show="showGallary" @close="handleGallaryClose"></common-gallary>
+    <common-gallary :imgs="gallaryImgs" v-show="showGallary" @close="handleGallaryClose"></common-gallary>
   </div>
 </template>
 
@@ -20,8 +20,8 @@ export default {
   name: 'DetailBanner',
   props: {
     sightName: String,
-    img: String,
-    imgs: Array
+    bannerImg: String,
+    gallaryImgs: Array
   },
   data () {
     return {
