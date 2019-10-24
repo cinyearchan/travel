@@ -23,7 +23,7 @@ export default {
     }
   },
   methods: {
-    handleScroll (e) {
+    handleScroll () {
       const top = document.documentElement.scrollTop
       if (top > 60) {
         let opacity = top / 140
