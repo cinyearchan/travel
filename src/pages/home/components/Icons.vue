@@ -6,7 +6,7 @@
           <div class="icon-img">
             <img class="icon-img-content" :src="item.imgUrl" alt />
           </div>
-          <p class="icon-desc">{{item.desc}}</p>
+          <p class="icon-desc">{{item.title}}</p>
         </div>
       </swiper-slide>
     </swiper>
